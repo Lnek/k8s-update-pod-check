@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: update-pod-check
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: update-pod-check
+    spec:
+      containers:
+      - name: update-pod-check
+        image: update-pod-check:1.0
+        ports:
+        - containerPort: 80
